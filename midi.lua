@@ -24,7 +24,7 @@ for i = 2, #args do
 end
 
 local instruments = {}
-for address in component.list("note_block") do
+for address in component.list("iron_noteblock") do
   table.insert(instruments, function(note)
     -- 60 = C in MIDI, 6 = C in Minecraft
     component.invoke(address, "trigger", (note + 6 - 60) % 24 + 1)
